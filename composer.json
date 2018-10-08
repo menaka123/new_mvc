@@ -1,0 +1,17 @@
+{
+    "name": "menakafernando/simple-mvc",
+    "require": {
+        "illuminate/database": "^5.7"
+    },
+    "autoload": {
+        "classmap": [
+            "app/models"
+        ]
+    } ,
+    "authors": [
+        {
+            "name": "menakafernando",
+            "email": "project.menaka@gmail.com"
+        }
+    ]
+}
