@@ -98,7 +98,9 @@ class Home extends Controller{
                         $response =
                             $client->request('POST', '/wunderfleet-recruiting-backend-dev-save-payment-data', ['body' => json_encode($body) ]);
 
+                        $res = json_decode($response->getBody());
 
+                        $cus->payment_id =  $res['payment_id'];
 
                     }
                     catch (GuzzleHttp\Exception\ClientException $e) {
