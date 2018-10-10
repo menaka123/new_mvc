@@ -1,0 +1,8 @@
+Dependencies : Run ->  Composer install
+
+Application Run point is in the `/public` dir.
+
+Change the database settings in teh  `app/database.php`
+
+
+
