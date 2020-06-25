@@ -3,13 +3,8 @@ Dependencies : Run ->  Composer install
 Application Run point is in the `/public` dir.
 
 Change the database settings in teh  `app/database.php`
+user/table/password
 
-1. Describe possible performance optimizations for your Code.
-    I have not create a method to handle post operations.
-    Also the routing can be done better.
 
-2. Which things could be done better, than you’ve done it?
-I will use Laravel(or any kind of framework for starters) . for the front end use
-a front end frame work or at least use API calls and build a api in backend.
 
 
