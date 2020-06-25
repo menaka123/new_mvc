@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2018 at 09:09 AM
+-- Generation Time: Jun 26, 2020 at 12:32 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -25,55 +25,63 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Table structure for table `attributes`
 --
 
-CREATE TABLE `customers` (
+CREATE TABLE `attributes` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `last_name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `telephone` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `street` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `house_number` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `zip` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `city` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `account_number` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `iban` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `payment_id` varchar(500) COLLATE utf8_bin DEFAULT NULL
+  `user_id` int(11) NOT NULL,
+  `name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `value` varchar(300) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `customers`
+-- Dumping data for table `attributes`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `telephone`, `street`, `house_number`, `zip`, `city`, `account_number`, `iban`, `payment_id`) VALUES
-(1, 'sad', 'asd', 'ad', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'sad 3', 'asd', 'ad', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'sad 5', 'asd', 'ad', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'sad 6', 'asd', 'ad', '284/4/B/5/A base line road, daluwakotuwa', 'vy', '11540', 'kochchikade', 'yvyv', NULL, NULL),
-(5, 'menaka', 'fernando', 'rr', NULL, NULL, NULL, NULL, 'ef', 'dsf', NULL),
-(6, 'menaka', 'fernando', 'qwe', NULL, NULL, NULL, NULL, 'yvyv', 'vy', NULL),
-(7, 'menaka', 'fernando', 'qwe', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'sad', NULL),
-(8, 'menaka', 'fernando', 'adas', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'vy', NULL),
-(9, 'menaka', 'fernando', 'qwe', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'dsf', NULL),
-(10, 'menaka', 'fernando', '2432', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'vy', NULL),
-(11, NULL, NULL, NULL, '', '', '', '', 'yvyv', 'vy', NULL),
-(12, 'menaka', 'fernando', 'qwe', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'vy', NULL),
-(13, 'menaka', 'fernando', 'qwe', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'vy', NULL),
-(14, 'menaka', 'fernando', 'qwe', '', '', '', '', '', '', NULL),
-(15, 'menaka', 'fernando', 'qwe', '284/4/B/5/A base line road, daluwakotuwa', 'sdsd', '11540', 'kochchikade', 'yvyv', 'vy', NULL),
-(16, 'asda', 'asd', 'asd', 'asda', 'asd', 'asd', 'asd', 'asd', 'ads', NULL),
-(17, 'adasd12', 'asd', 'asd', 'asda', 'asd', 'asd', 'asd', 'asd', 'asd', NULL),
-(18, 'asdasd', 'asd', 'asd', '284/4/B/5/A base line road, daluwakotuwa', 'aad', '11540', 'kochchikade', 'yvyv', 'vy', NULL);
+INSERT INTO `attributes` (`id`, `user_id`, `name`, `value`) VALUES
+(1, 6, 'address', 'liepaja'),
+(2, 6, 'sex', 'male');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `password` varchar(500) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'menaka fernando', 'project.menaka@gmail.com', '$2y$10$wIDmFYgNkhKfIaQFTzca/.fvwY.z6T6luK1oFxlOOLiYIqS0qrqei'),
+(2, 'menaka fernando', 'project1.menaka@gmail.com', '$2y$10$n7OCaG7CzuEn0VVipDI7Yu9i7tPc6oUeuFnu9CkDRO.EyFJs4s86G'),
+(3, 'menaka fernando', 'project2.menaka@gmail.com', '$2y$10$CTWLcoZLoGCf6Q6gZ4Tjveyeu5DZkO6G2N659/x70vpqHAkcNVm1i'),
+(4, 'menaka fernando', 'project4.menaka@gmail.com', '$2y$10$EOaCuxB4PXhMQ8ayDn1nvOe3WcrSDEzd6PxO6xYepRsolavvNcAU2'),
+(5, 'menaka fernando', 'project5.menaka@gmail.com', '$2y$10$DNvqPlViqcifsH8MDfTHKuXXHcx2wG.FeA09aOKXa1OgcavvhTejy'),
+(6, 'menaka fernando', 'abc@a.com', '$2y$10$GIrgrhReHE6xX.PHBROO7eA.m12T7AUYKU6Jd83ODAG2UsbZEgVKu');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `customers`
+-- Indexes for table `attributes`
 --
-ALTER TABLE `customers`
+ALTER TABLE `attributes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -81,10 +89,16 @@ ALTER TABLE `customers`
 --
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT for table `attributes`
 --
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `attributes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
