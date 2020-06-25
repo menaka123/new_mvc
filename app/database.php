@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: menakafernando
- * Date: 10/6/18
- * Time: 5:47 PM
- */
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
