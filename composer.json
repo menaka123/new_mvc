@@ -1,7 +1,7 @@
 {
     "name": "menakafernando/simple-mvc",
     "require": {
-        "illuminate/database": "^5.7",
+        "illuminate/database": "^6.20",
         "guzzlehttp/guzzle": "~6.0"
     },
     "autoload": {
